@@ -18,4 +18,5 @@ var/
 .installed.cfg
 *.egg
 .idea/
+pytorch/.mypy_cache
 
