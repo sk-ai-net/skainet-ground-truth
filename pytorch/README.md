@@ -2,6 +2,10 @@
 
 This repository contains PyTorch-based ground truth generation for SKAINet.
 
+## Development
+
+This project uses [uv](https://github.com/astral-sh/uv) for Python package management and virtual environments.
+
 ## Docker Setup
 
 ### Building the Docker Image

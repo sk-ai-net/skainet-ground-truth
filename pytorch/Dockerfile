@@ -10,17 +10,19 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Install pipenv
-RUN pip install --no-cache-dir pipenv
+# Install uv
+RUN pip install --no-cache-dir uv
 
-# Copy Pipfile
-COPY Pipfile ./
+# Copy project files
+COPY pyproject.toml requirements.txt ./
 
-# Install dependencies
-RUN pipenv install
+# Create venv and install dependencies using uv
+RUN uv venv && \
+    . .venv/bin/activate && \
+    uv pip install -r requirements.txt
 
 # Copy the rest of the application
 COPY . .
 
 # Set the default command
-CMD ["pipenv", "run", "gt", "src", "results"]
+CMD [".venv/bin/gt", "src", "results"]
