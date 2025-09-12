@@ -35,6 +35,6 @@ Refer to the [`pytorch/README.md`](pytorch/README.md) for complete setup instruc
 This project is designed to generate structured ground truth data for validating calculations used in the [SKaiNET](https://skainet.sk) machine learning framework. It leverages PyTorch for execution as an ultimative source of truth (we consider results of calculation executed by pytorch as valid) and utilizes the *[gradienttracer](https://github.com/sk-ai-net/gradienttracer) testing framework* for structuring, executing and storing the data in GGUF format.
 
 
-## Note on Artifactss
+## Note on Artifacts
 
 Since the generated artifacts are binary files, they are not included in this repository. Instead, they are created during the execution of the test suites and stored in the `results` directory.
