@@ -1,2 +1,3 @@
 gradienttracer @ git+https://github.com/sk-ai-net/gradienttracer.git
 gguf
+torchvision
