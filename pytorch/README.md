@@ -36,3 +36,12 @@ The generated files include ground truth data for various convolution operations
 - Padded convolution
 - Depthwise convolution
 - Batched input
+
+## Test Suites
+
+In addition to convolution tests (TS-001), this project includes several suites located under `src/`.
+
+- TS-006: Simple Tensor Ops with Broadcasting
+  - Focuses on addition and subtraction using broadcasting with NCHW batched tensors
+  - Common patterns covered: scalar, channel bias (1,C,1,1), spatial map (1,1,H,W)
+  - Run with: `gt src/TS-006 results`

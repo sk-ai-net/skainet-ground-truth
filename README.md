@@ -38,3 +38,25 @@ This project is designed to generate structured ground truth data for validating
 ## Note on Artifacts
 
 Since the generated artifacts are binary files, they are not included in this repository. Instead, they are created during the execution of the test suites and stored in the `results` directory.
+
+## PyTorch Test Suites Overview
+
+The PyTorch portion of this repository includes several test suites under `pytorch/src`, each producing GGUF ground truth files when executed with the `gt` command.
+
+- TS-001: Convolution operations
+  - Covers: basic 2D, strided, padded, depthwise, batched inputs
+- TS-002: Tensor slicing operations
+  - Covers: representative slicing/indexing behaviors
+- TS-003: Tensor flatten operations
+  - Covers: flatten behavior and shape transformations
+- TS-004: GGUF string operations
+  - Covers: GGUF string handling utilities
+- TS-005: MNIST training and model serialization
+  - Covers: minimal MNIST training path and model export to GGUF
+  - Note: requires `torchvision` (install separately if missing)
+- TS-006: Simple Tensor Ops with Broadcasting
+  - Covers: addition and subtraction using broadcasting with NCHW batched tensors
+  - Patterns: scalar, channel bias (1,C,1,1), spatial map (1,1,H,W)
+
+To run all suites at once:
+- `cd pytorch && gt src results`
